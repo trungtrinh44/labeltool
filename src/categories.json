@@ -1,18 +1,18 @@
 {
   "addr_street": {
-    "color": "#C7E3FB",
+    "color": "#dbb24f",
     "shortcut": "S"
   },
   "addr_district": {
-    "color": "#49C5FB",
+    "color": "#d5daac",
     "shortcut": "D"
   },
   "addr_city": {
-    "color": "#1a95d7",
+    "color": "#9d8fc2",
     "shortcut": "C"
   },
   "addr_ward": {
-    "color": "#6ba0fd",
+    "color": "#a6949f",
     "shortcut": "W"
   },
   "position": {
@@ -28,11 +28,11 @@
     "shortcut": "M"
   },
   "transaction_type": {
-    "color": "#FFC0F1",
+    "color": "#a6b1a1",
     "shortcut": "T"
   },
   "realestate_type": {
-    "color": "#F0E4D7",
+    "color": "#f973c5",
     "shortcut": "E"
   },
   "legal": {
@@ -44,8 +44,16 @@
     "shortcut": "O"
   },
   "surrounding": {
-    "color": "#D7B88B",
+    "color": "#5ae2f7",
     "shortcut": "U"
+  },
+  "surrounding_characteristics": {
+    "color": "#5c78eb",
+    "shortcut": "I"
+  },
+  "surrounding_name": {
+    "color": "#45a0ac",
+    "shortcut": "N"
   },
   "interior_floor": {
     "color": "#F00705",
@@ -56,7 +64,7 @@
     "shortcut": "R"
   },
   "orientation": {
-    "color": "#CB904D",
+    "color": "#2a920b",
     "shortcut": "H"
   },
   "project": {

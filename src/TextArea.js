@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import TinyColor from './tinycolor';
 import { trimNewLine, getSelectionText, checkParentRelation } from './utils';
 import './TextArea.css';
 
@@ -224,7 +225,10 @@ export default class TextArea extends Component {
                   <span
                     key={`${temp}-${id}`}
                     id={`${temp}-${id}`}
-                    style={{ backgroundColor: color }}
+                    style={{
+                      backgroundColor: color,
+                      color: TinyColor(color).isDark() ? 'white' : 'black',
+                    }}
                   >
                     {x}
                   </span>,
@@ -235,7 +239,10 @@ export default class TextArea extends Component {
                 <span
                   key={`${temp}-${id}`}
                   id={`${temp}-${id}`}
-                  style={{ backgroundColor: color }}
+                  style={{
+                    backgroundColor: color,
+                    color: TinyColor(color).isDark() ? 'white' : 'black',
+                  }}
                 >
                   {x}
                 </span>
