@@ -68,6 +68,7 @@ class App extends Component {
           <span>{name && name !== '' ? name : 'Choose file'}</span>
         </div>
         {data && [
+          <label key='current-file'>{`Current file: ${idx}/${data.length}`}</label>,
           <button
             type="button"
             className="btn btn-default"
