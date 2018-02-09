@@ -227,7 +227,7 @@ export default class TextArea extends Component {
                     id={`${temp}-${id}`}
                     style={{
                       backgroundColor: color,
-                      color: TinyColor(color).isDark() ? 'white' : 'black',
+                      color: TinyColor(color).getBrightness() < 196 ? 'white' : 'black',
                     }}
                   >
                     {x}
@@ -241,7 +241,7 @@ export default class TextArea extends Component {
                   id={`${temp}-${id}`}
                   style={{
                     backgroundColor: color,
-                    color: TinyColor(color).isDark() ? 'white' : 'black',
+                    color: TinyColor(color).getBrightness() < 150 ? 'white' : 'black',
                   }}
                 >
                   {x}

@@ -1,6 +1,6 @@
 {
   "addr_street": {
-    "color": "#dbb24f",
+    "color": "#f9c069",
     "shortcut": "S"
   },
   "addr_district": {
@@ -36,7 +36,7 @@
     "shortcut": "E"
   },
   "legal": {
-    "color": "#FA8F4C",
+    "color": "#e97b27",
     "shortcut": "L"
   },
   "potential": {
