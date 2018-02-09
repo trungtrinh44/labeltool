@@ -91,7 +91,10 @@ export default class TextArea extends Component {
       className="btn btn-default"
       onClick={() => this.handleTextSelected(name)}
       key={`${name}-${idx}`}
-      style={{ backgroundColor: this.props.categories[name].color }}
+      style={{
+        backgroundColor: this.props.categories[name].color,
+        color: TinyColor(this.props.categories[name].color).getBrightness() < 196 ? 'white' : 'black',
+      }}
     >
       {`${name} (${this.props.categories[name].shortcut})`}
     </button>
@@ -241,7 +244,7 @@ export default class TextArea extends Component {
                   id={`${temp}-${id}`}
                   style={{
                     backgroundColor: color,
-                    color: TinyColor(color).getBrightness() < 150 ? 'white' : 'black',
+                    color: TinyColor(color).getBrightness() < 196 ? 'white' : 'black',
                   }}
                 >
                   {x}
