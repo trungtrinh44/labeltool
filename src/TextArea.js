@@ -109,6 +109,7 @@ export default class TextArea extends Component {
     const {
       startContainer, endContainer, startOffset, endOffset,
     } = range;
+    if (startOffset === endOffset) return;
     const startContainerId = startContainer.parentNode.id.split('-');
     const endContainerId = endContainer.parentNode.id.split('-');
     const startRunIdx = parseInt(startContainerId[0], 10);
