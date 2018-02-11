@@ -228,6 +228,7 @@ export default class TextArea extends Component {
                   <span
                     key={`${temp}-${id}`}
                     id={`${temp}-${id}`}
+                    title={type}
                     style={{
                       backgroundColor: color,
                       color: TinyColor(color).getBrightness() < 196 ? 'white' : 'black',
@@ -240,6 +241,7 @@ export default class TextArea extends Component {
               }
               return (
                 <span
+                  title={type}
                   key={`${temp}-${id}`}
                   id={`${temp}-${id}`}
                   style={{

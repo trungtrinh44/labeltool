@@ -68,7 +68,7 @@ class App extends Component {
           <span>{name && name !== '' ? name : 'Choose file'}</span>
         </div>
         {data && [
-          <label key='current-file'>{`Current file: ${idx}/${data.length}`}</label>,
+          <span key="current-file">{`Current file: ${idx + 1}/${data.length}`}</span>,
           <button
             type="button"
             className="btn btn-default"
@@ -82,7 +82,7 @@ class App extends Component {
             type="button"
             className="btn btn-default"
             key="next"
-            disabled={idx === data.length}
+            disabled={idx + 1 === data.length}
             onClick={() => this.setState({ idx: idx + 1 })}
           >
             Next

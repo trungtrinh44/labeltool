@@ -12,11 +12,11 @@
     "shortcut": "C"
   },
   "addr_ward": {
-    "color": "#a6949f",
+    "color": "#046a95",
     "shortcut": "W"
   },
   "position": {
-    "color": "#51A3A3",
+    "color": "#5f5b65",
     "shortcut": "P"
   },
   "area": {
@@ -40,7 +40,7 @@
     "shortcut": "L"
   },
   "potential": {
-    "color": "#6e2241",
+    "color": "#7c11ba",
     "shortcut": "O"
   },
   "surrounding": {
