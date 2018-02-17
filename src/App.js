@@ -3,6 +3,8 @@ import './App.css';
 import TextArea from './TextArea';
 import { download } from './utils';
 import categories from './categories.json';
+import { PREDICT_API } from './constants';
+import axios from 'axios';
 
 class App extends Component {
   constructor() {
@@ -33,6 +35,64 @@ class App extends Component {
       reader.readAsText(file);
     }
   };
+
+  predict = () => {
+    const {
+      idx, data, runs,
+    } = this.state;
+    const newLocal = this;
+    axios.post(PREDICT_API, [data[idx].content]).then((res) => {
+      const newData = this.combineChunk(res.data[0][0]);
+      // console.log(data[idx].content)
+      data[idx].content = newData.content;
+      runs[idx] = newData.runs;
+      newLocal.setState({ data, runs });
+      // console.log(data[idx].content);
+      // console.log(runs[idx]);
+    });
+  }
+
+  combineChunk = (chunks) => {
+    const content = chunks.map(i => i[0]).join(' ');
+    // console.log(chunks)
+    const runs = {};
+    let s = 0;
+    let p = null;
+    chunks.forEach((chunk, idx) => {
+      runs[s] = {
+        type: chunk[1],
+        end: s + chunk[0].length,
+        prev: p,
+      };
+      p = s;
+      s += chunk[0].length;
+      if (idx < chunks.length - 1) {
+        runs[s] = {
+          type: 'normal',
+          end: s + 1,
+          prev: p,
+        };
+        p = s;
+        s += 1;
+      }
+    });
+    s = 0;
+    while (runs[s]) {
+      const next = runs[runs[s].end];
+      if (next && next.type === runs[s].type) {
+        const nextNext = runs[next.end];
+        const temp = runs[s].end;
+        runs[s].end = next.end;
+        if (nextNext) {
+          nextNext.prev = s;
+        }
+        delete runs[temp];
+      } else {
+        s = runs[s].end;
+      }
+    }
+    return { content, runs };
+  }
 
   saveRuns(idx) {
     const { runs } = this.state;
@@ -94,6 +154,14 @@ class App extends Component {
             onClick={this.saveAll}
           >
             Save
+          </button>,
+          <button
+            type="button"
+            className="btn btn-default"
+            key="predict"
+            onClick={this.predict}
+          >
+            Predict
           </button>,
         ]}
         {idx >= 0 && data && data[idx] ? (
