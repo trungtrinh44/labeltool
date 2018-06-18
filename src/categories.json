@@ -3,7 +3,7 @@
     "color": "#f9c069",
     "shortcut": "S"
   },
-  "addr_district": {
+  "addr_town": {
     "color": "#d5daac",
     "shortcut": "D"
   },
@@ -11,7 +11,7 @@
     "color": "#9d8fc2",
     "shortcut": "C"
   },
-  "addr_ward": {
+  "addr_county": {
     "color": "#046a95",
     "shortcut": "W"
   },
@@ -67,7 +67,7 @@
     "color": "#2a920b",
     "shortcut": "H"
   },
-  "project": {
+  "postcode": {
     "color": "#C3E991",
     "shortcut": "J"
   }
