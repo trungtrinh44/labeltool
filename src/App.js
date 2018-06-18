@@ -155,14 +155,14 @@ class App extends Component {
           >
             Save
           </button>,
-          <button
-            type="button"
-            className="btn btn-default"
-            key="predict"
-            onClick={this.predict}
-          >
-            Predict
-          </button>,
+//           <button
+//             type="button"
+//             className="btn btn-default"
+//             key="predict"
+//             onClick={this.predict}
+//           >
+//             Predict
+//           </button>,
         ]}
         {idx >= 0 && data && data[idx] ? (
           <TextArea
